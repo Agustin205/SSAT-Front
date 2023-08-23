@@ -1,0 +1,150 @@
+body {
+    background-color: grey;
+  }
+  
+  .Mostrar {
+    margin-left: 40px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+  }
+
+  .Mostrar:hover {
+    background-color: #3e8e41;
+  }
+  
+  .Sobreescribir {
+    margin-left: 40px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+  }
+
+  .Sobreescribir:hover {
+    background-color: #da190b;
+  }
+  
+  .Crear {
+    margin-left: 40px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+  }
+
+  .Crear:hover {
+    background-color: #007a99;
+  }
+  
+  .Seleccion {
+    margin-left: 40px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .consultas {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .editar {
+    background-color: yellow;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .editar:hover {
+    background-color: #dfc712;
+  color: black;
+  }
+  
+  select {
+    margin-bottom: 20px;
+  }
+  
+/*   table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  table th {
+    color: black;
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #ccbfbf;
+  }
+
+  thead{
+    background-color: #8aca8c;
+    color: white;
+  }
+  
+  table td {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #ccbfbf;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  table tbody tr:hover {
+    background-color: #ddd;
+  } */
+
+  .label1 {
+    display: inline-block;
+    text-align: right;
+    margin-right: 10px;
+  }
+  
+  .input-container {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  input[type="text"] {
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+  }

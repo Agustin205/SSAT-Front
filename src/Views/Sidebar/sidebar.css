@@ -1,0 +1,48 @@
+.main-panel {
+	position: relative;
+	width:86%;
+	overflow: auto;
+	height: 100vh;
+	background-color: #f5f5f5;
+	margin-left: 14%; /* ancho del sidebar */
+	padding: 30px;
+	transition: all 0.3s ease-in-out;
+}
+
+.sidebar {
+	background-color: #2d2d2d;
+	color: #fff;
+	height: 100vh;
+	position: fixed;
+	width: 14%;
+}
+
+.sidebar-logo {
+	align-items: center;
+	display: inline;
+	font-size: 20px;
+	height: 60px;
+	justify-content: center;
+}
+
+.img-logo {
+	max-width: 250px;
+	max-height: 150px;
+	margin-top: 10px;
+}
+
+.sidebar-menu {
+	list-style: none;
+	margin: 20px;
+	padding: 0;
+}
+
+.sidebar-menu-item {
+	border-bottom: 1px solid #444;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+.sidebar-menu-item:last-child {
+	border-bottom: none;
+}

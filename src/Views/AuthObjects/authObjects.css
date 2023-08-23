@@ -1,0 +1,40 @@
+.Add {
+  padding: 2% !important;
+  border: none !important;
+  width: 100% !important;
+  margin-top: 5% !important;
+  margin-left: 170% !important;
+}
+
+.PrimaryBTN {
+  width: 25% !important;
+  margin-top: 2% !important;
+  margin-right: 1% !important;
+}
+
+.PreviewBTN {
+  width: 25% !important;
+  margin-top: 2% !important;
+}
+
+.container-fluid h2{
+  margin-bottom: 1.5rem !important;
+}
+
+.card-header{
+  padding: 0.9rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label1{
+  display: flex;
+  margin-left: 300px;
+}
+
+.filtros {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

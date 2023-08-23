@@ -1,0 +1,23 @@
+.containerConfig{
+   display: flex;
+   justify-content: center;
+   flex-direction: column; 
+   text-align: center;
+}
+
+h4{
+    margin-top: 3% !important;
+}
+
+.form{
+    width: 50%;
+    margin-top: 1%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.input{
+    width: 50% !important;
+    margin-right: 2%;
+}

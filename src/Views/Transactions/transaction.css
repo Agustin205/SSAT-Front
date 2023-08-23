@@ -1,0 +1,39 @@
+.Agregar {
+    width:30% !important;
+    margin-bottom: 1% !important;
+}
+.PrimaryBTN{
+    width: 25% !important; 
+    margin-top: 2% !important; 
+    margin-right: 1% !important;
+}
+
+.PreviewBTN{
+    width: 25% !important; 
+    margin-top: 2% !important; 
+}
+
+.btn-warning{
+    --bs-btn-color: #fff !important;
+    --bs-btn-bg: #E85D04 !important;
+    --bs-btn-border-color: #E85D04 !important;
+    --bs-btn-hover-color: #fff !important;
+    --bs-btn-hover-bg: #db7c26 !important;
+    --bs-btn-hover-border-color: #db7c26 !important;
+    --bs-btn-active-color: #fff !important;
+    --bs-btn-active-bg: #db7c26 !important;
+    --bs-btn-active-border-color: #db7c26 !important;
+    --bs-btn-disabled-color: #fff !important;
+    --bs-btn-disabled-bg: #E85D04 !important;
+    --bs-btn-disabled-border-color: #E85D04 !important;
+}
+
+tbody, td, tfoot, th, thead, tr{
+    padding-left: 2.5rem !important;
+}
+
+.filtros {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
