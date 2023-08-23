@@ -254,10 +254,10 @@ function Consultas() {
         });
         const blob = new Blob([response.data], { type: "text/csv" });
         saveAs(blob, `resultado_${name}.csv`);
-        finalObject["loader"] = true;
-        finalObject["userValidityDate"] = false;
-        finalObject["powerProfiles"] = false;
-        finalObject["blockUsers"] = false;
+        finalObject["loader"] = false;
+        setUserValidityDate(!userValidityDate);
+        setPowerProfiles(!powerProfiles);
+        setBlockUsers(!blockUsers);
       } catch (error) {
         console.error("Error al llamar al backend:", error);
         this.setState({ loader: false });
