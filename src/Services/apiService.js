@@ -88,7 +88,11 @@ instance.interceptors.request.use(
 
   export const authObject = async (data) => {
     try {
-      const response = await instance.post("/objectSearch", data);
+      const response = await instance.post("/objectSearch", data, {
+        headers: {
+            'responseType': 'blob'
+        },timeout: 0
+    });
       return response.data;
     } catch (error) {
       console.error("Error al obtener los objetos de autorización:", error);

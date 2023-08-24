@@ -5,7 +5,7 @@ import axios from "axios";
 import { Card, Button, Row, Col, Table,Form } from "react-bootstrap";
 import EditableTable from "../editarTable/editableTable";
 import { convertData } from "../TransConsultas/Convertidor.js";
-import { getConsult, editConsult, addConsult } from "../../Services/apiService";
+import { getConsult, editConsult, addConsult,authObject } from "../../Services/apiService";
 import { saveAs } from "file-saver";
 
 function Consultas() {
@@ -242,16 +242,7 @@ function Consultas() {
           blockUsers: blockUsers,
           client: localStorage.getItem("clientName"),
         };
-        console.log(finalObject);
-        const headers = {
-          responseType: "blob",
-          Authorization: `Bearer ${localStorage.getItem("gameToken")}`,
-        };
-        const url = "http://localhost:3443/objectSearch";
-        const response = await axios.post(url, finalObject, {
-          headers,
-          timeout: 0,
-        });
+        const response = await authObject(finalObject);
         const blob = new Blob([response.data], { type: "text/csv" });
         saveAs(blob, `resultado_${name}.csv`);
         finalObject["loader"] = false;

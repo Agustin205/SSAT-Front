@@ -13,7 +13,7 @@ import {
 import EditableTable from "../../Components/editarTable/editableTable";
 import axios from "axios";
 import { saveAs } from "file-saver";
-import { addConsult } from "../../Services/apiService";
+import { addConsult,authObject } from "../../Services/apiService";
 
 const array = [];
 class AuthObjects extends Component {
@@ -228,12 +228,7 @@ class AuthObjects extends Component {
         let data = this.state;
         data["lote"] = localStorage.getItem("loteId");
         this.setState({ loader: true });
-        const headers = {
-          responseType: "blob",
-          Authorization: `Bearer ${localStorage.getItem("gameToken")}`,
-        };
-        const url = "http://localhost:3443/objectSearch";
-        const response = await axios.post(url, data, { headers,timeout:0});
+        const response = await authObject(data);
         const blob = new Blob([response.data], { type: "text/csv" });
         saveAs(blob, `resultado_${name}.csv`);
         this.setState({

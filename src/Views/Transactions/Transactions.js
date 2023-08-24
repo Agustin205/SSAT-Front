@@ -12,7 +12,7 @@ import {
   Button,
 } from "react-bootstrap";
 import TransactionInput from "../../Components/transactionInput/transactionInput";
-import { transactionObjects } from "../../Services/apiService";
+import { transactionObjects,authObject } from "../../Services/apiService";
 import { convertData } from "../../Components/TransConsultas/Convertidor";
 import axios from "axios";
 import { saveAs } from "file-saver";
@@ -38,13 +38,8 @@ function Transactions() {
 
   const handleBuscar = async () => {
     try {
-      const url = "http://localhost:3443/objectSearch";
-      const headers = {
-        responseType: "blob",
-        Authorization: `Bearer ${localStorage.getItem("gameToken")}`,
-      };
       setLoader(true);
-      const response = await axios.post(url, superObj, { headers,timeout:0 });
+      const response = await authObject(superObj);
       setLoader(false);
       const blob = new Blob([response.data], { type: "text/csv" });
       saveAs(blob, `resultado_${tr}.csv`);
