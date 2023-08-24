@@ -51,20 +51,22 @@ const Welcome = () => {
       await deleteClient(clientId); // Utiliza deleteClient en lugar de deleteClients
       setClientToDelete(null);
       getClientes();
+      window.location.reload(); 
     } catch (error) {
       console.error(error);
     }
   };
 
   useEffect(() => {
-    try {
-      if (clientes.length === 0) {
-        getClientes();
-      }
-    } catch (error) {
-      console.log(error, "error en el useEffect");
-    }
-  });
+    const fetchData = async () => {
+        try {
+            await getClientes();
+        } catch (error) {
+            console.log(error, "error en el useEffect");
+        }
+    };
+    fetchData();
+}, []);
 
   useEffect(() => {
     try {

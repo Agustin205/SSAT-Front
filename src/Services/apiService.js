@@ -93,7 +93,7 @@ instance.interceptors.request.use(
             'responseType': 'blob'
         },timeout: 0
     });
-      return response.data;
+      return response;
     } catch (error) {
       console.error("Error al obtener los objetos de autorización:", error);
       throw error;
