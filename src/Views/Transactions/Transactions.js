@@ -101,7 +101,6 @@ function Transactions() {
         .map((consulta) => convertirClavesAMinusculas(consulta));
       let consultaDivididaVon = divCons(arrayAsubir);
       let obj = convertData(consultaDivididaVon);
-      console.log(obj);
       let objASubir = {};
       objASubir["data"] = obj;
       objASubir["userValidityDate"] = userValidityDate;

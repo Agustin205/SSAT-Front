@@ -17,7 +17,6 @@ function Modall({ onSave, data, onClose }) {
   };
 
   const handleSaveClick = () => {
-    console.log('Datos actualizados:', newData);
     onSave(newData);
     onClose();
   };

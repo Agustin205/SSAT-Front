@@ -164,8 +164,6 @@ class AuthObjects extends Component {
       problem = "Tiene que tener un lote asignado para realizar la consulta!";
     }
 
-    console.log(this.state.data);
-
     while (verif && index < this.state.data.length) {
       let claveObj = Object.keys(this.state.data[index]).filter(
         (key) => key !== "id"
@@ -221,8 +219,6 @@ class AuthObjects extends Component {
           name = nameVar.von[0];
         }
       }
-
-      console.log(this.state);
 
       try {
         let data = this.state;

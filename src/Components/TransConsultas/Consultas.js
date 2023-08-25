@@ -5,7 +5,7 @@ import axios from "axios";
 import { Card, Button, Row, Col, Table,Form } from "react-bootstrap";
 import EditableTable from "../editarTable/editableTable";
 import { convertData } from "../TransConsultas/Convertidor.js";
-import { getConsult, editConsult, addConsult,authObject } from "../../Services/apiService";
+import { getConsult, editConsult, addConsult, authObject } from "../../Services/apiService";
 import { saveAs } from "file-saver";
 
 function Consultas() {
@@ -26,7 +26,6 @@ function Consultas() {
     const fetchData = async () => {
       try {
         const resultado = await getConsult({});
-        console.log(resultado);
         setConsultData(resultado);
       } catch (error) {
         console.log(error, "error en el fetch");
@@ -73,12 +72,10 @@ function Consultas() {
 
   const handleSelectChange = (event) => {
     try {
-      console.log(consultData);
       const filteredData = consultData.filter((item) => item.client === client);
       const idss = addIdsToResponse(filteredData); //CAMBIO DATA
       const selectedName = event.target.value;
       const query = idss.data.find((item) => item.name === selectedName); // CAmbio data
-      console.log(query.data);
       setSelectedQuery({ data: convertData(query.data) });
       setShowEditableTable2(false);
       setTimeout(() => {
@@ -95,11 +92,8 @@ function Consultas() {
     try {
       if (selectedQuery.data === null) {
       } else {
-        console.log(inputValue);
         const index = consultData.findIndex((item) => item.name === inputValue);
         const nuevaData = [];
-        console.log("Sobreescribir tabla");
-        console.log(selectedQuery.data);
         selectedQuery.data.forEach((obj) => {
           let claveObj = Object.keys(obj).filter((key) => key !== "id")[0];
           let camposObj = Object.keys(obj[claveObj]);
@@ -118,7 +112,6 @@ function Consultas() {
           });
         });
         consultData[index].data = nuevaData;
-        console.log(consultData[index]);
         await editConsult(consultData[index]);
       }
     } catch (error) {
@@ -132,8 +125,6 @@ function Consultas() {
       const selectedName = inputValue;
       const index = consultData.findIndex((item) => item.name === selectedName);
       const nuevaData = [];
-      console.log("Crear nueva tabla");
-      console.log(selectedQuery.data);
       selectedQuery.data.forEach((obj) => {
         let claveObj = Object.keys(obj).filter((key) => key !== "id")[0];
         let camposObj = Object.keys(obj[claveObj]);
@@ -172,7 +163,6 @@ function Consultas() {
       verif = false;
       problem = "Tiene que tener un lote asignado para realizar la consulta!";
     }
-    console.log(selectedQuery.data);
 
     while (verif && index < selectedQuery.data.length) {
       let claveObj = Object.keys(selectedQuery.data[index]).filter(
@@ -242,7 +232,7 @@ function Consultas() {
           blockUsers: blockUsers,
           client: localStorage.getItem("clientName"),
         };
-        const response = await authObject(finalObject);
+        const response = await authObject(finalObject)
         const blob = new Blob([response.data], { type: "text/csv" });
         saveAs(blob, `resultado_${name}.csv`);
         finalObject["loader"] = false;

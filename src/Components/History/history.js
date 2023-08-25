@@ -7,7 +7,6 @@ import { saveAs } from "file-saver";
 
 function History(props) {
     const [listaConsultas, setListaConsultas] = useState(props.lote);
-    console.log(props.lote)
 
     const handleCsv = async (item) => {
         
